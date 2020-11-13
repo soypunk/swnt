@@ -67,7 +67,7 @@ func (h *Hugo) Write() error {
 	}
 
 	fmt.Println("Setting Title...")
-	_, err = exec.Command("sed", "-i", fmt.Sprintf("s/TITLE/%s/", h.Name), "config.toml").CombinedOutput()
+	_, err = exec.Command("sed", "-i", ".bak", fmt.Sprintf("s/TITLE/%s/", h.Name), "config.toml").CombinedOutput()
 	if err != nil {
 		return err
 	}
